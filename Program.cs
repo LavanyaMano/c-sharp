@@ -6,15 +6,21 @@ namespace csharp
 	{
 		public static void Main(string[] args)
 		{
-			int[] evenNumbers = new int [3];
+			//single line comment
 
-			evenNumbers[0] = 0;
-			evenNumbers[1] = 2;
-			evenNumbers[2] = 4;
+			/* multi line comment
+			 * second line==== */
 
-			Console.WriteLine("even number array type{0}", evenNumbers);
 
-			Console.WriteLine("first even number - {0}",evenNumbers[0]);
+
+		}
+		/// <summary>
+		/// Sample.
+		/// </summary>
+		public class sample 
+		{
+			//empty class to show xml comment (///). To describe the class
+			// when this class is used, the summary will be shown.
 		}
 	}
 }
