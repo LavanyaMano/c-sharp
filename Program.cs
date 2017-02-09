@@ -6,12 +6,15 @@ namespace csharp
 	{
 		public static void Main(string[] args)
 		{
-			float f = 123.45f;
-			int i = Convert.ToInt32(f);
-			int j = (int)f;
+			int[] evenNumbers = new int [3];
 
-			Console.WriteLine("convert to int:f  {0}",i);
-			Console.WriteLine("explicit int converter:   {0}", j);
+			evenNumbers[0] = 0;
+			evenNumbers[1] = 2;
+			evenNumbers[2] = 4;
+
+			Console.WriteLine("even number array type{0}", evenNumbers);
+
+			Console.WriteLine("first even number - {0}",evenNumbers[0]);
 		}
 	}
 }
