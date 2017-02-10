@@ -9,14 +9,19 @@ namespace csharp
 			Console.WriteLine("Please enter a number");
 			int Usernumber = int.Parse(Console.ReadLine()); //readline gets string. So we are parsing to int
 
-			if (Usernumber >= 0)
-			{
-				Console.WriteLine("Your number is {0}", Usernumber);
+			switch (Usernumber)
+			{ 
+				case 10:
+					Console.WriteLine("Your number is 10");
+					break;
+				case 20:
+					Console.WriteLine("Your number is 20");
+					break;
+				default:
+					Console.WriteLine("You have entered neither 10 nor 20.");
+					break;
 			}
-			else
-			{
-				Console.WriteLine("You have entered number less than 1");
-			}
+			//also it is possible to combine the cases. 
 
 		}
 
