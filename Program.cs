@@ -6,21 +6,19 @@ namespace csharp
 	{
 		public static void Main(string[] args)
 		{
-			//single line comment
+			Console.WriteLine("Please enter a number");
+			int Usernumber = int.Parse(Console.ReadLine()); //readline gets string. So we are parsing to int
 
-			/* multi line comment
-			 * second line==== */
-
-
+			if (Usernumber >= 0)
+			{
+				Console.WriteLine("Your number is {0}", Usernumber);
+			}
+			else
+			{
+				Console.WriteLine("You have entered number less than 1");
+			}
 
 		}
-		/// <summary>
-		/// Sample.
-		/// </summary>
-		public class sample 
-		{
-			//empty class to show xml comment (///). To describe the class
-			// when this class is used, the summary will be shown.
-		}
+
 	}
 }
