@@ -19,6 +19,17 @@ namespace csharp
 			{
 				Console.WriteLine("printing array value in position {0} = {1}",i,Numbers[i]);
 			}
+
+			foreach (int j in Numbers)
+			{
+				Console.WriteLine("printing array values {0}",j);
+			}
+			int k = 0;
+			while (k < Numbers.Length)
+			{
+				Console.WriteLine("printing in while loop {0}", Numbers[k]);
+				k++;
+			}
 		}
 
 	}
