@@ -6,31 +6,46 @@ namespace csharp
 	{
 		public static void Main(string[] args)
 		{
-			//for loop
+			// methods (static and instance).
 
-			int[] Numbers = new int[3];
+			MainClass.EvenNumbers(50); //direct access
 
-			Numbers[0] = 1;
-			Numbers[1] = 2;
-			Numbers[2] = 3;
+			MainClass M = new MainClass(); // instance is created
 
-			int i = 0;
-			for (i = 0; i < Numbers.Length; i++) 
+			int sum = M.AddNumbers(10, 30);
+
+			Console.WriteLine("Sum is {0}", sum);
+
+		}
+		/// <summary>
+		/// This is a static method.
+		/// This doesn't return anything. (thats why Void keyword is used.)
+		/// It is public and static method, so instance of class need not to be created.
+		/// </summary>
+		/// <param name="endNumber">End number.</param>
+		public static void EvenNumbers(int endNumber)
+		{
+			int startNumber = 0;
+
+			while (startNumber <= endNumber)
 			{
-				Console.WriteLine("printing array value in position {0} = {1}",i,Numbers[i]);
-			}
+				Console.WriteLine(startNumber);
+				startNumber += 2;
 
-			foreach (int j in Numbers)
-			{
-				Console.WriteLine("printing array values {0}",j);
-			}
-			int k = 0;
-			while (k < Numbers.Length)
-			{
-				Console.WriteLine("printing in while loop {0}", Numbers[k]);
-				k++;
 			}
 		}
 
+		/// <summary>
+		/// Adds the numbers.
+		/// This is not a static method. Hence to access this instance of the class has to be created.
+		/// It returns int type value.
+		/// </summary>
+		/// <returns>The numbers.</returns>
+		/// <param name="firstNumber">First number.</param>
+		/// <param name="secondNumber">Second number.</param>
+		public int AddNumbers(int firstNumber, int secondNumber)
+		{
+			return firstNumber + secondNumber;
+		}
 	}
 }
