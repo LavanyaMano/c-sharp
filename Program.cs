@@ -4,48 +4,62 @@ namespace csharp
 {
 	class MainClass
 	{
-		public static void Main(string[] args)
-		{
-			// methods (static and instance).
+		//Encapsulation: Enclosing one or more items within in a physical or logical package.
+		//Its done using access specifiers.(Public, Private, Protected, Internal, Protected internal)
 
-			MainClass.EvenNumbers(50); //direct access
 
-			MainClass M = new MainClass(); // instance is created
-
-			int sum = M.AddNumbers(10, 30);
-
-			Console.WriteLine("Sum is {0}", sum);
-
-		}
-		/// <summary>
-		/// This is a static method.
-		/// This doesn't return anything. (thats why Void keyword is used.)
-		/// It is public and static method, so instance of class need not to be created.
-		/// </summary>
-		/// <param name="endNumber">End number.</param>
-		public static void EvenNumbers(int endNumber)
-		{
-			int startNumber = 0;
-
-			while (startNumber <= endNumber)
-			{
-				Console.WriteLine(startNumber);
-				startNumber += 2;
-
-			}
-		}
-
-		/// <summary>
-		/// Adds the numbers.
-		/// This is not a static method. Hence to access this instance of the class has to be created.
-		/// It returns int type value.
-		/// </summary>
-		/// <returns>The numbers.</returns>
-		/// <param name="firstNumber">First number.</param>
-		/// <param name="secondNumber">Second number.</param>
-		public int AddNumbers(int firstNumber, int secondNumber)
-		{
-			return firstNumber + secondNumber;
-		}
 	}
+	class Rectangle
+	{
+		//member variables public
+		public double length;
+		public double width;
+
+		public double GetArea()
+		{
+			return length * width;
+		}
+
+		public void Display()
+		{
+			Console.WriteLine("Length: {0}", length);
+			Console.WriteLine("Width:{0}", width);
+			Console.WriteLine("Area:{0}", GetArea());
+		}
+
+		//private variables
+		private double length1;
+		private double width1;
+
+		public void Acceptdetails()
+		{
+			Console.WriteLine("Enter length : ");
+			length1 = Convert.ToDouble(Console.ReadLine());
+			Console.WriteLine("Enter width: ");
+			width1 = Convert.ToDouble(Console.ReadLine());
+		}
+
+		public void Display1()
+		{
+			Console.WriteLine("Private variable length1 is {0}",length1);
+			Console.WriteLine("Private variable width1 is {0}", width1);
+		}
+
+	}// end class Rectangle
+	class ExecuteRectangle
+	{
+		static void Main(string[] args)
+		{
+			Rectangle r = new Rectangle();
+
+			r.length = 4.5;
+			r.width = 3.5;
+			r.Display();
+			Console.WriteLine("length1 and width1 are private. Can't call here");
+			r.Acceptdetails();
+			r.Display1();
+		}
+
+	}
+
 }
